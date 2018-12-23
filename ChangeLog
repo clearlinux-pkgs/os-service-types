@@ -1,6 +1,20 @@
 CHANGES
 =======
 
+1.4.0
+-----
+
+* Updated from OpenStack Service Type Authority
+* Update the hacking to latst
+* Don't quote {posargs} in tox.ini
+* Removed older version of python added 3.5
+* Add unittest for os\_service\_types.data module
+* Use keystoneauth only in applicable test
+* Close descriptor after reading file
+* add python 3.6 unit test job
+* switch documentation job to new PTI
+* import zuul job settings from project-config
+
 1.3.0
 -----
 
