@@ -1,5 +1,5 @@
 PKG_NAME := os-service-types
-URL = https://files.pythonhosted.org/packages/ad/1b/7bc2b1f91e5e4c51c40fcbe6d4ebe068f8a96490a0e12f480f98940f4ba4/os-service-types-1.4.0.tar.gz
+URL = https://files.pythonhosted.org/packages/74/ba/950eac3557ea6f2ce963cb4d9ad0d375794e4b8257ca5b12a68afd62524f/os-service-types-1.5.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

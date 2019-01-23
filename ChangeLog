@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+1.5.0
+-----
+
+* Updated from OpenStack Service Type Authority
+* Update hacking version
+* Change openstack-dev to openstack-discuss
+
 1.4.0
 -----
 
