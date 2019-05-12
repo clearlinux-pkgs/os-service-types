@@ -1,6 +1,14 @@
 CHANGES
 =======
 
+1.7.0
+-----
+
+* Updated from OpenStack Service Type Authority
+* Update links for opendev
+* OpenDev Migration Patch
+* add python 3.7 unit test job
+
 1.6.0
 -----
 
@@ -10,6 +18,7 @@ CHANGES
 -----
 
 * Updated from OpenStack Service Type Authority
+* Update home-page
 * Update hacking version
 * Change openstack-dev to openstack-discuss
 
