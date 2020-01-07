@@ -4,7 +4,7 @@
 #
 Name     : os-service-types
 Version  : 1.7.0
-Release  : 9
+Release  : 10
 URL      : https://files.pythonhosted.org/packages/58/3f/09e93eb484b69d2a0d31361962fb667591a850630c8ce47bb177324910ec/os-service-types-1.7.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/58/3f/09e93eb484b69d2a0d31361962fb667591a850630c8ce47bb177324910ec/os-service-types-1.7.0.tar.gz
 Summary  : Python library for consuming OpenStack sevice-types-authority data
