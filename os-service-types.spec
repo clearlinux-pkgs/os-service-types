@@ -4,7 +4,7 @@
 #
 Name     : os-service-types
 Version  : 1.7.0
-Release  : 10
+Release  : 11
 URL      : https://files.pythonhosted.org/packages/58/3f/09e93eb484b69d2a0d31361962fb667591a850630c8ce47bb177324910ec/os-service-types-1.7.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/58/3f/09e93eb484b69d2a0d31361962fb667591a850630c8ce47bb177324910ec/os-service-types-1.7.0.tar.gz
 Summary  : Python library for consuming OpenStack sevice-types-authority data
@@ -18,10 +18,18 @@ BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 
 %description
-================
 os-service-types
-================
-Python library for consuming OpenStack sevice-types-authority data
+        ================
+        
+        Python library for consuming OpenStack sevice-types-authority data
+        
+        The `OpenStack Service Types Authority`_ contains information about official
+        OpenStack services and their historical ``service-type`` aliases.
+        
+        The data is in JSON and the latest data should always be used. This simple
+        library exists to allow for easy consumption of the data, along with a built-in
+        version of the data to use in case network access is for some reason not
+        possible and local caching of the fetched data.
 
 %package license
 Summary: license components for the os-service-types package.
@@ -44,6 +52,8 @@ python components for the os-service-types package.
 Summary: python3 components for the os-service-types package.
 Group: Default
 Requires: python3-core
+Provides: pypi(os_service_types)
+Requires: pypi(pbr)
 
 %description python3
 python3 components for the os-service-types package.
@@ -51,13 +61,15 @@ python3 components for the os-service-types package.
 
 %prep
 %setup -q -n os-service-types-1.7.0
+cd %{_builddir}/os-service-types-1.7.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1557685143
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1583703970
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -72,7 +84,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/os-service-types
-cp LICENSE %{buildroot}/usr/share/package-licenses/os-service-types/LICENSE
+cp %{_builddir}/os-service-types-1.7.0/LICENSE %{buildroot}/usr/share/package-licenses/os-service-types/294b43b2cec9919063be1a3b49e8722648424779
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -83,7 +95,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/os-service-types/LICENSE
+/usr/share/package-licenses/os-service-types/294b43b2cec9919063be1a3b49e8722648424779
 
 %files python
 %defattr(-,root,root,-)
